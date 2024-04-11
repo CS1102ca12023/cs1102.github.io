@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html>
+<style>
+h1 {text-align: center;}
+ #topinfo{
+      background: transparent;
+      width: 100%;
+      float: top;
+    }
+    table {border: 1px solid black;}
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: center;
+    }
+
+</style>
+<head>
+    <title>Lossless image comparsion </title>    
+
+</head>
+
+<body>
+  <div id="topinfo">
+        <h1>CS1102 - Course Project - 2023/2024 Semester B</h1>
+        <h4>Different image compression algorithams</h4>
+        <p> 
+          <table>
+            <tr>
+              <td>Chan Yue Ting (57276040)</td>
+              <td>Lau Foo Kiu (56616932)</td>
+              <td>Pan Ching Man (56623253)</td>
+              <td>Yau Kam Chau (57850287)</td>
+              <td>Yau Wing Yan (56611870)</td>
+            </tr>
+          </table>
+        </p>
+        <hr/>
+    </div>
+
+  </br>
+  <script>
+var color = new Array("black", "brown");
+var no = 0;
+function load(obj){
+     theobj = obj;
+     setInterval("change(theobj)",1100);
+}
+function change(obj){
+     if (no >= color.length)     no = 0;
+     obj.style.color = color[no];
+     no++;
+}
+</script>
+</head>
+
+<body onLoad="load(text)">
+<span id=text style="font-size:30pt;font-weight:bold;">
+Lossless image compression comparison </span>
+</script>
+
+
+</br>
+<h3>Lossless compression Algorithm  </h3>
+
+<li> Lossless compression is a technique to compress image without data losing. </li>
+<li> It enables images to take up less space and there is a discernible loss in picture quality </li>
+<li> It is known as reversible compression which data files is restored and rebuilt in its orginal form after decompression</li>
+  
+  </br>
+  <table>
+  <tr>
+    <th> </th>
+    <th> PNG </th>
+    <th> GIF </th>
+    <th> BMP </th>
+    <th> Lossless RAW </th>
+  </tr>
+  <tr>
+    <td><b> Compression Algorithm</b></td>
+    <td>DEFLATE</td>
+    <td>Encoding</td>
+    <td>Run-Length Encoding </td>
+    <td> Processed by Post-processing software </td>
+  <tr>
+    <td> <b> Color range</b> </td>
+    <td> Full 24-bit color (8 bits per channel) and an alpha channel ( level of transparency between 0 (fully transparent) and 255 (fully opaque).) </td>
+    <td> 256 colors per image and single transparent color </td>
+    <td> 8-bit (256 colours) and 24-bit (16 million colours) </td>
+    <td> No fixed color range </td>
+   </tr>
+   <td> <b> File size after file compression </b></td>
+    <td> Large </td>
+    <td> Small </td>
+    <td> Large </td>
+    <td> Large </td>
+   </tr>
+   <td> <b> Image quality after file compression </b></td>
+    <td> High </td>
+    <td> Low </td>
+    <td> High </td>
+    <td> High </td>
+   </tr>
+</table>
+</br> 
+<h3> Lossless compression using Run-length Encoding and DFTBA </h3>
+<div> 
+<IMG SRC="Lossless gif.gif" width="40%"  >
+</div>
+
+
+</body>
+</html>
