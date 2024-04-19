@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WEBP format</title>
+    <style>
+        :root {
+            /* Light theme colors */
+            --background-color: #86a7db; /* Light blue */
+            --text-color: #000; /* Black */
+            --border-color: #000; /* Black */
+        }
+        
+        .dark-mode {
+            /* Dark theme colors */
+            --background-color: #363537; /* Dark gray */
+            --text-color: #FAFAFA; /* Almost white */
+            --border-color: #919191; /* Light gray */
+        }
+        
+        body {
+
+            background-color: var(--background-color);
+            color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+      
+        #topinfo {
+        table, th, td {
+            border: 1px solid var(--border-color);
+            padding: 8px;
+            text-align: center;}
+          }
+        #ceninfo {
+            margin-right: 300px;
+            margin-left: 300px;
+
+            table, th, td {
+            width: 1200px;
+            height: 50px;
+            border: 1px solid var(--border-color);
+            padding: 8px;
+            text-align: center;  
+        }
+
+        #compress {
+            table, th, td {
+            width: 1200px;
+            height: 50px;
+            border: transparent;
+            text-align: center;  
+        }
+    </style>
+</head>
+<body>
+    <div id="topinfo">
+        <h1>CS1102 - Course Project - 2023/2024 Semester B</h1>
+        <h4>Different image compression algorithms</h4>
+        <table>
+            <tr>
+                <td>Chan Yue Ting (57276040)</td>
+                <td>Lau Foo Kiu (56616932)</td>
+                <td>Pan Ching Man (56623253)</td>
+                <td>Yau Kam Chau (57850287)</td>
+                <td>Yau Wing Yan (56611870)</td>
+            </tr>
+        </table>
+        <hr/>
+    </div>
+    <div id="ceninfo">
+        <h2>Lossy Compression -- WEBP Format</h2>
+        <p> WebP is an image format developed by Google, focus on compress the image on the web, primarily aims to faster the page loading and reduced bandwidth usage.</p>
+        <table>
+          <tr>
+            <th> Advantage </th>
+            <th> Disadvantage </th>
+          </tr>
+          <tr>
+            <td><b>Better Compression: </b> Significantly better compression than JPEG, produce smaller file size and better image quality. </td>
+            <td><b>Browser Limitation: </b> Not all the browser and tools support WebP.</td>
+          </tr>
+          <tr>
+            <td><b>Support Transparency: </b> WEBP support transparent background not like JPEG, where without overlay white pixel.</td>
+            <td><b>Duration on En/Decoding: </b> WEBP require more processing power to encode and decode than JPEG, where the calcualation time will be longer on limited computational devices.</td>
+          </tr>
+          <tr>
+            <td><b>Better Compatibility: </b> WEBP support transparent background not like JPEG, where without overlay white pixel.</td>
+            <td><b>OverCompression: </b>If the ratio of compression is too large, it also will lead to noticable loss of image quality.</td>
+          </tr>
+        </table>
+        <h2> Compression Method -- Arithmetic Entropy Encoding </h2>
+    <div id="compress">
+        <table>
+          <tr>
+              <td valign="button"> Process Of Compression: </td>
+              <td><img src="webpcompression.png" width="624" height="152" > </td>
+          </tr>
+          <tr>
+              <td><b>Step 1: Modeling the Data</b></br>Evaluate the probability distribtion of pixel values and prediction errors. </td>
+              <td><b>Step 4: Normalization</b></br>Adjust the interval to maintain precision and prevent overflow. </td>
+          </tr>
+           <tr>
+              <td><b>Step 2: Interval Subdivision</b></br>Divide the encoding range into different set of interval based on various symbol probabilities. </td>
+              <td><b>Step 5: Output Generation</b></br>Select random value within the interval as the output of endcoded data. </td>
+          </tr>
+           <tr>
+              <td><b>Step 3: Encoding</b></br>Narrow the encoding interval sequentially within each symbol processed. </td>
+              <td><b>Step 6: Post Adjustments</b></br>Utilize encode data to suitable for WEBP output format for the compatibility. </td>
+          </tr>
+        </table>
+    </div>
+        <table>
+          <tr>
+            <td>WEBP support Transparency format:</td>
+            <td><img src="transwebp.png" width="150" height="150"></td>
+            <td>WEBP also support Animation:</td>
+            <td><img src="gifwebp.webp" width="150" height="150"></td>
+          </tr>
+        </table>
+    </div>
+      <button onclick="toggleDarkMode()">Toggle Dark/Light Mode</button>
+      <script>
+          function toggleDarkMode() {
+              document.body.classList.toggle('dark-mode');
+          }
+      </script>
+    </div>
+</body>
+</html>

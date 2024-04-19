@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PNG</title>
+    <style>
+        .image-container {
+            display: inline-block;
+            margin-right: 20px;
+            
+        }
+        #topinfo{
+      background: transparent;
+      width: 100%;
+      float: top;
+    }
+h1 {text-align: center;}
+div {text-align: center;}
+    table {border: 1px solid black;}
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: center;
+    }
+    button {
+    background-color: black;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 10%; }
+    </style>
+</head>
+<body>
+    <div id="topinfo">
+        <h1>CS1102 - Course Project - 2023/2024 Semester B</h1>
+        <h4>Different image compression algorithams</h4>
+        <p> 
+          <table>
+            <tr>
+              <td>Chan Yue Ting (57276040)</td>
+              <td>Lau Foo Kiu (56616932)</td>
+              <td>Pan Ching Man (56623253)</td>
+              <td>Yau Kam Chau (57850287)</td>
+              <td>Yau Wing Yan (56611870)</td>
+            </tr>
+          </table>
+        </p>
+        <hr/>
+    </div>
+    <h1>PNG (Portable Network Graphics)</h1>
+    <p>PNG is a widely-used image file format due to its lossless compression and support for transparency. </p>
+    <p>The compression contain two stages. First is the Filtering, then it achieves compression through the 
+        DEFLATE algorithm, which combines LZ77 and Huffman coding techniques.</p>
+    <h2>Filtering</h2>
+    <div class="image-container">
+    <img src="CS1.png" alt="Filtering" width="200", style = "float:left" > Filtering is a prediction algorithm for 
+    each scan line of pixels to reduce the amount of data that needs to be compressed. It operates by encoding 
+    with the relation to neighboring pixel, inculding left (A), overhead (B) and above-left (C) pixels. 
+    Representing value differently from the previous value. If the data is linearly correlated, it result in lower values, 
+    and improved compressibility.
+</div>
+    <div class="image-container">
+        <p>
+    <img src="CS2.png" alt="Filtering" width="400", style = "float:left" > The value of Y is replaced by the differences 
+    of actaul value and prediction. The computer will select the best filtering method out of five 
+    which can product lowest number of unique symbols. 
+    </p>
+    <ol>
+        <li>No filtering</li>
+        <li>Difference between Y and A</li>
+        <li>Difference between Y and B</li>
+        <li>Difference between Y and average of A & B </li>
+        <li>Linear function of A,B,C</li>
+    </ol>
+</div>
+    <h2>DEFLATE</h2>
+    <p>Deflate is smiliar to other compressors, for example, PKWARE, PKZIP, GZip.</p>
+    <p>Limitations of Deflate:</p>
+    <ol>
+        <li>Maximum compression ratio is 1032 : 1</li>
+        <li>In a larger image, there is less matches, compression reslut in greater image size.</li>
+        <li>Overhead appear if there is less than 3 symbols in the match.</li>
+    </ol>
+    <img src="CS3.png" alt="DEFLATE" width="100", style = "float:left"> 
+    In the left is an example of DEFLATE algorithm. By changing the size from 90 to 92, the size of image have change. 
+    The size grow from 20K to 41K which is 2 times larger. Differences of matches is the reason of this situation. 
+    <p>An insignificant change can result in a considerable effect on image size.</p>
+</body>
+<br/>
+<br/>
+<br/>
+ <a href="#top">
+  <button>Back to top</button>
+</a>
+</html>

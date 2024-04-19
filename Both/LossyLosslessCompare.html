@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Data Compression</title>
+    <style>
+        .content-section {
+            padding: 24px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+        #topinfo{
+      background: transparent;
+      width: 100%;
+      float: top;
+    }
+    table {border: 1px solid black;}
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: center;
+    }
+    </style>
+</head>
+<body> <div>
+    <h1>CS1102 - Course Project - 2023/2024 Semester B</h1>
+    <h4>Different image compression algorithams</h4>
+    <p> 
+      <table>
+        <tr>
+          <td>Chan Yue Ting (57276040)</td>
+          <td>Lau Foo Kiu (56616932)</td>
+          <td>Pan Ching Man (56623253)</td>
+          <td>Yau Kam Chau (57850287)</td>
+          <td>Yau Wing Yan (56611870)</td>
+        </tr>
+      </table>
+    </p>
+    <hr/>
+</div>           
+    <div class="content-section">
+        <p>Effective data compression plays a crucial role in reducing the storage demands of digital content, ensuring files are more manageable and less resource-intensive.</p>
+        <p>Digital photographers, whether novice or expert, must grasp the essentials of compression to tackle the challenges posed by large file sizes of high-resolution images.</p>
+        <p>It's essential to recognize that compression techniques vary significantly in their approach and outcomes.</p>
+
+        <h3>Diverse Approaches to Data Compression</h3>
+        <p>Compression can be broadly classified into two distinct categories: lossy and lossless, each with its unique methodology and application.</p>
+        <ul>
+            <li><strong>Lossy Compression:</strong> This technique achieves size reduction by selectively discarding data deemed non-essential, which leads to irreversible changes in the file.</li>
+            <li><strong>Lossless Compression:</strong> In contrast, lossless compression works by eliminating redundant metadata, making it possible to reconstruct the original file without any loss of information.</li>
+        </ul>
+        <p>Through sophisticated algorithms, both techniques scrutinize image files to minimize their size by excluding parts that are either redundant or minimally impactful to the overall perception.</p>
+
+        <h2>Lossy Versus Lossless: A Comparative Overview</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Criteria</th>
+                    <th>Lossy Compression</th>
+                    <th>Lossless Compression</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Objective</td>
+                    <td>Performs permanent data elimination to reduce size.</td>
+                    <td>Enables precise data reconstruction, preserving original quality.</td>
+                </tr>
+                <tr>
+                    <td>Suitable Conditions</td>
+                    <td>Optimal when minor data loss is an acceptable trade-off for size reduction.</td>
+                    <td>Ideal for scenarios requiring absolute fidelity to the original data.</td>
+                </tr>
+                <tr>
+                    <td>Typical Uses</td>
+                    <td>Frequently applied to media files like images, videos, and audio where slight quality degradation is permissible.</td>
+                    <td>Preferred for data where loss is unacceptable, such as critical text documents, certain image formats, and high-fidelity audio files.</td>
+                </tr>
+                <tr>
+                    <td>File Format Examples</td>
+                    <td>
+                        <ul>
+                            <li>Images: JPEG</li>
+                            <li>Video: MPEG, AVC, HEVC</li>
+                            <li>Audio: MP3, AAC</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>Images: RAW, BMP, PNG</li>
+                            <li>General: ZIP</li>
+                            <li>Audio: WAV, FLAC</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

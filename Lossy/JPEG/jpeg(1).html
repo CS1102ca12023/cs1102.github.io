@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JPEG format</title>
+    <style>
+        :root {
+            /* Light theme colors */
+            --background-color: #86a7db; /* Light blue */
+            --text-color: #000; /* Black */
+            --border-color: #000; /* Black */
+        }
+        
+        .dark-mode {
+            /* Dark theme colors */
+            --background-color: #363537; /* Dark gray */
+            --text-color: #FAFAFA; /* Almost white */
+            --border-color: #919191; /* Light gray */
+        }
+        
+        body {
+
+            background-color: var(--background-color);
+            color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+      
+        #topinfo {
+        table, th, td {
+            border: 1px solid var(--border-color);
+            padding: 8px;
+            text-align: center;}
+          }
+        #ceninfo {
+            margin-right: 300px;
+            margin-left: 300px;
+
+            table, th, td {
+            width: 1200px;
+            height: 50px;
+            border: 1px solid var(--border-color);
+            padding: 8px;
+            text-align: center;  
+        }
+
+        #compress {
+            table, th, td {
+            width: 1200px;
+            height: 50px;
+            border: transparent;
+            text-align: center;  
+        }
+    </style>
+</head>
+<body>
+    <div id="topinfo">
+        <h1>CS1102 - Course Project - 2023/2024 Semester B</h1>
+        <h4>Different image compression algorithms</h4>
+        <table>
+            <tr>
+                <td>Chan Yue Ting (57276040)</td>
+                <td>Lau Foo Kiu (56616932)</td>
+                <td>Pan Ching Man (56623253)</td>
+                <td>Yau Kam Chau (57850287)</td>
+                <td>Yau Wing Yan (56611870)</td>
+            </tr>
+        </table>
+        <hr/>
+    </div>
+    <div id="ceninfo">
+        <h2>Lossy Compression -- JPEG Format</h2>
+        <p> Joint Photographic Experts Group(JPEG)is commonly used method for the lossy compression of image, where the degree of compression ratio can be adjusted. </br>Typically a tradeoff between storage size and image quality. </p>
+        <table>
+          <tr>
+            <th> Advantage </th>
+            <th> Disadvantage </th>
+          </tr>
+          <tr>
+            <td> <b>High Compression Ratio:</b>significantly reducing file size without substantial decrase in image quality. </td>
+            <td> <b>Not Ideal for All Types of Images:</b> simple line art, graphics are more suitable for JPEG, where less risk of losing clarity. </td>
+          </tr>
+          <tr>
+            <td> <b>Widely Supported:</b> JPEG is the most widely supported format across different softwarem web platforms and devices. </td>
+            <td><b>Artifacts:</b> Overcompression may introduce visual artifacts, like blurring or blockiness</td>
+          </tr>
+          <tr> 
+            <td> <b>Efficient Storage:</b> smaller file size means better saving storage space on devices.</td>
+            <td> <b>Unsuitable for Transparent Image:</b> it will turn transparent background to write pixel, caused distorted effect. </td>
+          </tr>
+        </table>
+        <h2> Compression Method -- Discrete Cosine Transform (DCT) </h2>
+        <div id="compress">
+          <table>
+            <tr>
+              <td valign="button"> Process Of Compression: </td>
+              <td><img src="jpegcompression.png" width="425" height="133" > </td>
+              <td valign="button"> Zigzag Ordering: </td>
+              <td><img src="zigzagordering.png" width="150" height="150"> </td>
+            </tr>
+          </table>
+          <table>    
+            </tr>
+            <tr>
+              <td><b>Step 1: Color Space Conversion</b></br>Coverts image from RGB to YCbCr, where Luminance(Y), and two chrominace components (Cb,Cr). </td>
+              <td><b>Step 5: Quantization</b></br>Decrease the number of DCT coefficients values, prior discrad less important information to compress data. </td>
+            </tr>
+            <tr>
+              <td><b>Step 2: Subsampling</b></br>Reduce the Cb,Cr resolution, decrasing the color detail that human not easy to notice. </td>
+              <td><b>Step 6: Zigzag Ordering</b></br>Reordering the quantized coefficients in zigzag patten which grup important data at the start.</td>
+            </tr>
+            <tr>
+              <td><b>Step 3: Block Splitting</b></br>Divide the image nto 8x8 pixel blocks which for the DCT process and compression. </td>
+              <td><b>Step 7: Entropy Coding</b></br>Use Run-Length Encoding(RLE) and Huffman coding to mark down the cofficients.</td>
+            </tr>
+            <tr>
+              <td><b>Step 4: Discrete Consine Transform</b></br> Reform into a 8x8 blocks from spatial to frequency domain, grouping most visual information to some cofficients. </td>
+              <td><b>Step 8: File Formatting</b></br>Capture the compressed data, header and metadata into the JPEG file.</td>
+            </tr>
+          </table>
+      </div>
+          <h2>Compare Between Different Compression Ratio in JPEG</h2>
+          <table>
+            <tr>
+              <th> 10% Quality: </th>
+              <td><img src="cityu10.jpg" width="200" height="126"> </td>
+              <th> 40% Quality: </th>
+              <td><img src="cityu40.jpg" width="200" height="126"> </td>
+            </tr>
+            <tr>
+              <th> 70% Quality: </th>
+              <td><img src="cityu70.jpg" width="200" height="126"> </td>
+              <th> 90% Quality: </th>
+              <td><img src="cityu90.jpg" width="200" height="126"> </td>
+            </tr>
+
+          </table>
+        </div>
+      <button onclick="toggleDarkMode()">Toggle Dark/Light Mode</button>
+      <script>
+          function toggleDarkMode() {
+              document.body.classList.toggle('dark-mode');
+          }
+      </script>
+    </div>
+</body>
+</html>

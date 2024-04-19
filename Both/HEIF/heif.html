@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HEIF format</title>
+    <style>
+        :root {
+            /* Light theme colors */
+            --background-color: #86a7db; /* Light blue */
+            --text-color: #000; /* Black */
+            --border-color: #000; /* Black */
+        }
+        
+        .dark-mode {
+            /* Dark theme colors */
+            --background-color: #363537; /* Dark gray */
+            --text-color: #FAFAFA; /* Almost white */
+            --border-color: #919191; /* Light gray */
+        }
+        
+        body {
+
+            background-color: var(--background-color);
+            color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+      
+        #topinfo {
+        table, th, td {
+            border: 1px solid var(--border-color);
+            padding: 8px;
+            text-align: center;}
+          }
+        #ceninfo {
+            margin-right: 300px;
+            margin-left: 300px;
+
+            table, th, td {
+            width: 1200px;
+            height: 50px;
+            border: 1px solid var(--border-color);
+            padding: 8px;
+            text-align: center;  
+        }
+
+        #compress {
+            table, th, td {
+            width: 1200px;
+            height: 50px;
+            border: transparent;
+            text-align: center;  
+        }
+    </style>
+</head>
+<body>
+    <div id="topinfo">
+        <h1>CS1102 - Course Project - 2023/2024 Semester B</h1>
+        <h4>Different image compression algorithms</h4>
+        <table>
+            <tr>
+                <td>Chan Yue Ting (57276040)</td>
+                <td>Lau Foo Kiu (56616932)</td>
+                <td>Pan Ching Man (56623253)</td>
+                <td>Yau Kam Chau (57850287)</td>
+                <td>Yau Wing Yan (56611870)</td>
+            </tr>
+        </table>
+        <hr/>
+    </div>
+    <div id="ceninfo">
+        <h2>Lossy Compression -- HEIF Format</h2>
+        <p> High Efficiency Image Format (HEIF) is a new image file format recently, they aims to repalce and be an alternative of JPEG where HEIF having better compression method and enhanced image quality. </p>
+        <table>
+          <tr>
+            <th> Advantage </th>
+            <th> Disadvantage </th>
+          </tr>
+          <tr>
+            <td> <b>Better Compress Ratio:</b>Allow HEIF have better compression than traditional format like JPEG, mean that it able to store a higher quality of image where less file size. </td>
+            <td> <b>Patnet Fee:</b>HEIF may invloves licensing fee or patents where it chargeable on the compression of using HEVC. </td>
+          </tr>
+          <tr>
+            <td> <b>Advanced Features Supported:</b>HEIF support 16-bit color depth, HDR,transparency and mulit-layer image file. </td>
+            <td><b>Limited Compatibility:</b>Not all the platform and devices fully support HEIF, where may have display error. </td>
+          </tr>
+        </table>
+        <div id="compress">
+        <h2> Compression Method -- High-Efficiency Video Coding </h2>
+          <table>
+            <tr><th colspan="2"><img src="heifcompress.png"></th></tr>
+            <tr>
+              <td><b>Step 1: Sequence Input</b></br>Put the image into the HEVE encoder. </td>
+              <td><b>Step 4: Quantization</b></br>Transformed coefficients are quantized to less the precision which helping to reduce the size of data. </td>
+            </tr>
+             <tr>
+              <td><b>Step 2: Prediction</b></br>Utilitze the intra and inter frames to predict the estimated pixel values. </td>
+              <td><b>Step 5: Entropy Coding</b></br>Use Context-Adaptive Binary Arithmetic Coding for futher compression and encode. </td>
+            </tr>
+            <td><b>Step 3: Transformation</b></br>Using DCT to transform the differences between actual and predicted pixel values. </td>
+              <td><b>Step 6: Muxing</b></br>Output the image which mulutiplexed into the HEIF container format. </td>
+            </tr>
+          </table>
+        </div>
+        <table>
+            <th> Visual of Context-Adaptive Binary Arithmetic Coding </th>
+            <td> <img src="cabac.png"></td>
+        </table>
+      <button onclick="toggleDarkMode()">Toggle Dark/Light Mode</button>
+      <script>
+          function toggleDarkMode() {
+              document.body.classList.toggle('dark-mode');
+          }
+      </script>
+    </div>
+</body>
+</html>

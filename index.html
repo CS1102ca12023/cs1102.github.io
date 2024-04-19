@@ -1,95 +1,451 @@
 <!DOCTYPE html>
+<html lang="en">
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <html>
-
 <head>
-<style>
-    body {background-color: #86a7db}
-   #topinfo{
-      h1 {text-align: left;}
-      h4 {text-align: left;}
-      background: transparent;
-      width: 100%;
-      float: top;
-      table {border: 1px solid black;}
-      th, td {
-      border: 1px solid black;
-      padding: 8px;
-      text-align: center;}
-    }
-   #ceninfo{
-      margin-right: 150px;
-      margin-left: 100px;    
-    }
-    table {border: 1px solid black;}
-      th, td {
-      border: 1px solid black;
-      padding: 8px;
-      text-align: center;}
-</style>
-<title>Intro To Lossy Compression</title>
-<div id="topinfo">
-        <h1 >CS1102 - Course Project - 2023/2024 Semester B</h1>
-        <h4>Different image compression algorithams</h4>
-        <p> 
-          <table>
-            <tr>
-              <td>Chan Yue Ting (57276040)</td>
-              <td>Lau Foo Kiu (56616932)</td>
-              <td>Pan Ching Man (56623253)</td>
-              <td>Yau Kam Chau (57850287)</td>
-              <td>Yau Wing Yan (56611870)</td>
-            </tr>
-          </table>
-        </p>
-        <hr/>
-</div>
-</head>
+  <title>CS1102</title>
+  <style>
+    pre {
+    font-family: monospace;
+  }
+  table {border: 1px solid black;}
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+  }
+  .dropdownmenu ul, .dropdownmenu li{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+  background: transparent;
+  width: 240px;
+  float: left;
+}
+  .dropdownmenu ul{
+    background: lightgray;
+    list-style: none;
+    width: 240px;
+    position: absolute;
+  }
+  .dropdownmenu li{
+    position: relative;
+    width: 240px;
+  }
+.dropdownmenu a{
+  background: lightgray;
+  color: white;
+  display: block;
+  font-weight: 400;
+  font-family: Timesnewroman;
+  padding: 15px ;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+.dropdownmenu li:hover a{
+  background: #34495e;
+}
+#submenu{
+  left:0;
+  opacity: 0;
+  position: absolute;
+  top: 35px;
+  visibility: hidden;
+  z-index: 1;
+}
+li:hover ul#submenu{
+  opacity: 1;
+  top: 80px;
+  visibility:visible;
+}
+#submenu li{
+  float: none;
+  width: 100%;
+}
+#submenu a:hover{
+  background: transparent;
+}
+#submenu a{
+  background: gray;
+}
+#topinfo{
+  background: transparent;
+  width: 100%;
+  float: top;
+}
+.maincontent{
+  background: transparent;
+  width: 80%;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tree-diagram-scroll::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+}
+.tree-diagram-scroll::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #e4e4e4;
+}
+.tree-diagram-scroll::-webkit-scrollbar-thumb {
+    background: #444444;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.tree-diagram-scroll::-webkit-scrollbar-thumb:hover {
+    background: #000000;
+    transition: 0.5s;
+}
+ 
+.tree-diagram-body{
+    white-space: nowrap;
+    overflow-y: hidden;
+    padding: 50px;
+    min-height: 500px;
+    padding-top: 10px;
+}
+.compression-expansion ul {
+    padding-top: 20px; 
+    position: relative;
+    padding-left: 0px;
+    display: flex;
+}
+.compression-expansion li {
+    float: left; text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 20px 5px 0 5px;
+}
+.compression-expansion li::before, .compression-expansion li::after{
+    content: '';
+    position: absolute; 
+  top: 0; 
+  right: 50%;
+    border-top: 2px solid #999;
+    width: 50%; 
+  height: 18px;
+}
+.compression-expansion li::after{
+    right: auto; left: 50%;
+    border-left: 2px solid #999;
+}
+.compression-expansion li:only-child::after, .compression-expansion li:only-child::before {
+    display: none;
+}
+.compression-expansion li:only-child{ 
+    padding-top: 0;
+}
+.compression-expansion li:first-child::before, .compression-expansion li:last-child::after{
+    border: 0 none;
+}
+.compression-expansion li:last-child::before{
+    border-right: 2px solid #999;
+    border-radius: 0 5px 0 0;
+    -webkit-border-radius: 0 5px 0 0;
+    -moz-border-radius: 0 5px 0 0;
+}
+.compression-expansion li:first-child::after{
+    border-radius: 5px 0 0 0;
+    -webkit-border-radius: 5px 0 0 0;
+    -moz-border-radius: 5px 0 0 0;
+}
+.compression-expansion ul ul::before{
+    content: '';
+    position: absolute; top: 0; left: 50%;
+    border-left: 2px solid #999;
+    width: 0; height: 20px;
+}
+.compression-expansion li a{
+    text-decoration: none;
+    color: #000;
+    font-family: arial, verdana, tahoma;
+    font-size: 11px;
+    display: inline-block;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+ 
+.compression-expansion li a:hover+ul li::after, 
+.compression-expansion li a:hover+ul li::before, 
+.compression-expansion li a:hover+ul::before, 
+.compression-expansion li a:hover+ul ul::before{
+    border-color:  #ff1100;
+}
 
+.diagrambox{
+    padding:0px 10px;
+    text-align: center;
+    border-radius: 4px;
+    position: relative;
+}
+.image-diagram{
+    width: 200px;
+    position: relative;
+}
+.image-diagram img{
+    width: 150px;
+    height: 60px;
+    border-radius: 6px;
+  background-color :#000;
+  z-index: 1;
+}
+  </style>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+$(function () {
+    $('.compression-expansion ul').hide();
+    $('.compression-expansion>ul').show();
+    $('.compression-expansion ul.active').show();
+    $('.compression-expansion li').on('click', function (e) {
+        var children = $(this).find('> ul');
+        if (children.is(":visible")) children.hide('fast').removeClass('active');
+        else children.show('fast').addClass('active');
+        e.stopPropagation();
+    });
+});
+</script>
+</head>
 <body>
-  <div id="ceninfo">
-  <h2> Lossy Image Compression Comparison </h2>
-  <ul>
-      <li>Reduce file size sigificantly aims to enhance transmission</li>
-      <li>Irreversible compression which data cannot full restored</li>
-      <li>Reduce infomation that human visual hard to notice</li>
-      <li>We seperate TIFF into Lossy Compression</li>
-  </ul>
+<div id="topinfo">
+  <h1>CS1102 - Course Project - 2023/2024 Semester B</h1>
+  <h4>Different image compression algorithms</h4>
+  <p> 
     <table>
-    <tr>
-      <th> </th>
-      <th><a href="testing.html"> JEPG</th>
-      <th>WEBP</th>
-      <th>TIFF</th>
-      <th>HEIF</th>
-    </tr>
-    <tr>
-      <th>Compression Algorithm</th>
-      <td>Discrete Cosine Transform (DCT)</td>
-      <td>Arithmetic Entropy Encoding</td>
-      <td>LZW Compression</td>
-      <td>High Efficiency Video Coding (HEVC)</td>
-    </tr>
-     <tr>
-      <th>Color Range</th>
-      <td>8-bit (16.7 million colors)</td>
-      <td>24-bit and support for 8-bit transparency</td>
-      <td>Up to 48-bit (65 billion colors)</td>
-      <td>Up to 16-bit (65,536 shades per color)</td>
-    </tr>
-     <tr>
-      <th>File Size After Compression</th>
-      <td>Small</td>
-      <td>Small</td>
-      <td>Large</td>
-      <td>Medium</td>
-    </tr>
-    <th>Image Quality After Compression</th>
-      <td>Good</td>
-      <td>Very High</td>
-      <td>High</td>
-      <td>Good,More efficient than JPEG</td>
-    </tr>
-  </table>
+      <tr>
+        <td>Chan Yue Ting (57276040)</td>
+        <td>Lau Foo Kiu (56616932)</td>
+        <td>Pan Ching Man (56623253)</td>
+        <td>Yau Kam Chau (57850287)</td>
+        <td>Yau Wing Yan (56611870)</td>
+      </tr>
+    </table>
+  </p>
+  <p> Techniques that our group has demonstrated
+    <ul>
+      <li> Dropdown </li>
+      <li> Technique 2</li>
+      <li> Technique 2</li>
+      <li> Technique 2</li>
+      <li> Technique 2</li>
+      <li> Technique 2</li>
+      <li> Advanced Javascript/ Html Techniques: 1) Color change of text 2) Window prompt 3) Back to top button 4)Dropdown Hover Menu 5)Treediagram on HomePage</li>
+      <li> Using php to generate a mini quiz</li>
+    </ul>
+  </p>
+  <a href="http://localhost/question/index.php">Mini Quiz after understood all algorithams</a>
+  <hr/>
+</div>
+   <div id=thedropdownmenu>
+    <nav class="dropdownmenu">
+    <ul>
+       <li><a href="index.html">Home</a>
+        <ul id="submenu">
+          <li><a href="Lossy/JPEG/JPEG.html">Lossy-Jpeg</a></li>
+          <li><a href="Lossless/BMP/BMP.html">Lossless-BMP</a></li>
+          <li><a href="Lossless/Raw/RAW.html">Lossless-RAW</a></li>
+          <li><a href="Lossless/Gif/Gif.html">Lossless-Gif</a></li>
+          <li><a href="Lossless/Png/png.html">Lossless-Png</a></li>
+          <li><a href="Both/WEBP/webp.html">Both-WEbp</a></li>
+          <li><a href="Both/TIFF/tiff.html">Both-Tiff</a></li>
+          <li><a href="Both/HEIF/heif.html">Both-HEIF</a></li>
+        </ul>
+      </li>
+    </ul>
+    </nav>
   </div>
-</body>
-</html>
+<div class="maincontent">
+  <div class="body tree-diagram-body tree-diagram-scroll">
+    <div class="compression-expansion">
+        <ul>
+            <li>
+                <a href="javascript:void(0);">
+                    <div class="diagrambox">
+                        <div class="image-diagram">
+                            <img src="HomePageButton/Home.png" alt="HOME">
+                            <div class="image-details">
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <ul class="active">
+                    <li>
+                        <a href="javascript:void(0);">
+                            <div class="diagrambox">
+                                <div class="image-diagram">
+                                    <img src="HomePageButton/Lossy.png" alt="LOSSY">
+                                    <div class="image-details">
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <ul >
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <div class="diagrambox">
+                                        <div class="image-diagram">
+                                            <a href="Lossy/JPEG/JPEG.html">
+                                            <img src="HomePageButton/JPEG.png" alt="JPEG">
+                                            </a>
+                                            <div class="image-details">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <div class="diagrambox">
+                                        <div class="image-diagram">
+                                            <a href="Lossless/Lossless Comparison/Lossless image Comparison .html">
+                                            <img src="HomePageButton/COMPARE.png" alt="COMPARE">
+                                            </a>
+                                            <div class="image-details">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <div class="diagrambox">
+                                <div class="image-diagram">
+                                    <img src="HomePageButton/LOSSLESS.png" alt="LOSSLESS">
+                                    <div class="image-details">
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <ul >
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <div class="diagrambox">
+                                        <div class="image-diagram">
+                                        <a href="Lossless/BMP/BMP.html">
+                                         <img src="HomePageButton/BMP.png" alt="BMP">
+                                         </a>
+                                           <div class="image-details">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <div class="diagrambox">
+                                        <div class="image-diagram">
+                                            <a href="Lossless/Raw/RAW.html">
+                                            <img src="HomePageButton/RAW.png" alt="LOSSLESS RAW">
+                                            </a>
+                                            <div class="image-details">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <div class="diagrambox">
+                                        <div class="image-diagram">
+                                            <a href="Lossless/Gif/Gif.html">
+                                            <img src="HomePageButton/GIF.png" alt="GIF">
+                                            </a>
+                                            <div class="image-details">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <div class="diagrambox">
+                                        <div class="image-diagram">
+                                            <a href="Lossless/Png/png.html">
+                                            <img src="HomePageButton/PNG.png" alt="PNG">
+                                            </a>
+                                            <div class="image-details">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <div class="diagrambox">
+                                        <div class="image-diagram">
+                                            <a href="Lossless/Lossless Comparison/Lossless image Comparison .html">
+                                            <img src="HomePageButton/COMPARE.png" alt="COMPARE">
+                                            </a>
+                                            <div class="image-details">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <div class="diagrambox">
+                                <div class="image-diagram">
+                                    <img src="HomePageButton/BOTH.png" alt="BOTH">
+                                    <div class="image-details">
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <ul >
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <div class="diagrambox">
+                                        <div class="image-diagram">
+                                            <a href="Both/webp.html">
+                                            <img src="HomePageButton/WEBP.png" alt="WEBP">
+                                            </a>
+                                            <div class="image-details">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <div class="diagrambox">
+                                        <div class="image-diagram">
+                                            <a href="Both/tiff.html">
+                                            <img src="HomePageButton/TIFF.png" alt="TIFF">
+                                            </a>
+                                            <div class="image-details">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <div class="diagrambox">
+                                        <div class="image-diagram">
+                                            <a href="Both/heif.html">
+                                            <img src="HomePageButton/HEIF.png" alt="HEIF">
+                                            </a>
+                                            <div class="image-details">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+

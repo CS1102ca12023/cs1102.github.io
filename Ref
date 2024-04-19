@@ -1,0 +1,74 @@
+- **Reduced File Size:** Significantly lowers file sizes, enhancing storage and transmission efficiency for multimedia, with a quality-file size trade-off (Salomon, Motta, & Bryant, 2009).
+
+- **Variable Compression Ratios:** Allows choosing between compression strength and quality, affecting file size and fidelity (Sayood, 2017).
+
+- **Irreversible Compression:** Compression is permanent; original data cannot be fully restored post-decompression (Wallace, 1991).
+
+- **Psycho-Visual Techniques:** Exploits human visual perception limitations to prioritize compression of less noticeable information (Skodras, Christopoulos, & Ebrahimi, 2001).
+
+- **Temporal and Spatial Compression:** Reduces redundancy in video through techniques targeting changes over time and within frames (Wiegand, Sullivan, Bjontegaard, & Luthra, 2003).
+
+### References
+
+Salomon, D., Motta, G., & Bryant, D. (2009). *Data Compression: The Complete Reference*. Springer.
+
+Sayood, K. (2017). *Introduction to Data Compression*. Morgan Kaufmann.
+
+Wallace, G. K. (1991). The JPEG still picture compression standard. *IEEE Transactions on Consumer Electronics*, 38(1), xviii-xxxiv.
+
+Skodras, A., Christopoulos, C., & Ebrahimi, T. (2001). The JPEG 2000 still image compression standard. *IEEE Signal Processing Magazine*, 18(5), 36-58.
+
+Wiegand, T., Sullivan, G. J., Bjontegaard, G., & Luthra, A. (2003). Overview of the H.264/AVC video coding standard. *IEEE Transactions on Circuits and Systems for Video Technology*, 13(7), 560-576.
+
+
+Jpeg
+Wallace, G. K. (1991). The JPEG still picture compression standard. IEEE Transactions on Consumer Electronics, 38(1), xviii-xxxiv. This foundational paper provides an in-depth overview of the JPEG compression standard, including its algorithmic basis and practical applications.
+
+Pennebaker, W. B., & Mitchell, J. L. (1992). JPEG: Still image data compression standard. Van Nostrand Reinhold. This book offers comprehensive coverage of the JPEG standard, detailing the technical aspects of the compression technique and its implementation.
+
+Skodras, A., Christopoulos, C., & Ebrahimi, T. (2001). The JPEG 2000 still image compression standard. IEEE Signal Processing Magazine, 18(5), 36-58. Although focused on JPEG 2000, this source provides useful comparisons with the original JPEG standard and insights into advancements in image compression technologies.
+
+https://www.researchgate.net/figure/JPEG-compression-algorithm_fig1_224440999
+
+Wallace, G. K. (1991). The JPEG still picture compression standard. Communications of the ACM, 34(4), 30-44. https://doi.org/10.1145/103085.103089
+
+Pennebaker, W. B., & Mitchell, J. L. (1992). JPEG: Still image data compression standard. Van Nostrand Reinhold.
+
+Gonzalez, R. C., & Woods, R. E. (2018). Digital image processing (4th ed.). Pearson. [This textbook provides comprehensive coverage of digital image processing techniques, including the JPEG compression algorithm and the Discrete Cosine Transform (DCT).]
+
+Rao, K. R., & Yip, P. (1990). Discrete cosine transform: Algorithms, advantages, applications. Academic Press. [This book is dedicated to the theory and applications of the Discrete Cosine Transform (DCT), a critical component of JPEG compression.]
+
+Webp 
+
+For an academic and detailed exploration of arithmetic coding used in image compression technologies such as WebP, sources like Howard, P. G., & Vitter, J. S. (1992). Arithmetic coding for data compression. Proceedings of the IEEE, 82(6), 857-865 and Sayood, K. (2017). Introduction to data compression (5th ed.). Morgan Kaufmann Publishers would provide comprehensive insights. These works outline the theoretical and practical aspects of arithmetic coding, emphasizing its application in various compression standards, including those used in modern image compression methodologies.
+
+Alvestrand, H. T., & Perkins, C. (2014). "Media Capture and Streams". IETF. This source could provide insights into the technical foundations of media streaming and encoding relevant to WebP.
+Google Developers. (n.d.). "WebP Compression Techniques". Retrieved from Google Developers Website. This resource would offer a comprehensive overview of the WebP format, its development, and technical details.
+Taubman, D., & Marcellin, M. W. (2002). "JPEG2000: Image Compression Fundamentals, Standards, and Practice". Journal of Electronic Imaging. This book, while focused on JPEG2000, provides essential background on image compression technologies that might contrast with WebP's approach.
+
+Pennebaker, W. B., & Mitchell, J. L. (1993). JPEG: Still Image Data Compression Standard. Van Nostrand Reinhold. [Provides an in-depth exploration of JPEG compression, applicable within TIFF files.]
+Salomon, D. (2007). Data Compression: The Complete Reference. Springer. [Includes a section on LZW and its applications in different formats, including TIFF.]
+Miano, J. (1999). Compressed Image File Formats: JPEG, PNG, GIF, XBM, BMP. Addison-Wesley Professional. [Discusses various compression schemes within the context of TIFF and other image formats.]
+
+
+Welch, T. A. (1984). A Technique for High-Performance Data Compression. IEEE Computer, 17(6), 8-19. This seminal paper introduces the LZW algorithm, detailing its mechanisms and applications in data compression.
+Murray, J. D., & vanRyper, W. (1996). Encyclopedia of Graphics File Formats. Sebastopol, CA: O'Reilly & Associates. This book provides comprehensive coverage on various graphics formats, including TIFF, and discusses their respective compression techniques such as LZW.
+
+
+HEIF 
+
+Sullivan, G. J., Ohm, J., Han, W., & Wiegand, T. (2012). Overview of the High Efficiency Video Coding (HEVC) Standard. IEEE Transactions on Circuits and Systems for Video Technology, 22(12), 1649-1668. http://doi.org/10.1109/TCSVT.2012.2221191
+Alakuijala, J., Bruse, J., Cominetti, A., Hanuschkin, A., Kliuchnikov, E., Marpe, D., ... & Winken, M. (2019). Improved HEIF image compression with learned dictionaries. IEEE Transactions on Image Processing, 29, 1702-1714. https://doi.org/10.1109/TIP.2019.2941279
+ISO/IEC 23008-12:2017. (2017). Information technology — High efficiency coding and media delivery in heterogeneous environments — Part 12: Image File Format. International Organization for Standardization. Retrieved from https://www.iso.org/standard/66067.html
+
+BMP
+
+Adobe (2024). What is a BMP file and how do you open them?. https://www.adobe.com/creativecloud/file-types/image/raster/bmp-file.html
+
+Run-Length-Encoding (2021). El-Shorouk Academy, Higher Institute for Computer & Information Technology Web site: https://taahmedsror.files.wordpress.com/2012/03/run-length-encoding.pdf
+
+Khan Academy (2020). Lossless image compression. https://www.khanacademy.org/computing/computers-and-internet/xcae6f4a7ff015e7d:digital-information/xcae6f4a7ff015e7d:data-compression/a/simple-image-compression
+
+RAW
+
+Sony (2023). What are Uncompressed RAW, Lossless Compressed RAW, or Compressed RAW image files and when should I use each type?. https://www.sony.com/electronics/support/articles/00257081

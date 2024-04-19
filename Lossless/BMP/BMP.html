@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html>
+<style>
+      #topinfo{
+      background: transparent;
+      width: 100%;
+      float: top;
+    }
+h1 {text-align: center;}
+div {text-align: center;}
+    table {border: 1px solid black;}
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: center;
+    }
+    button {
+    background-color: black;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 10%;
+}
+
+</style>
+<script>
+
+function greeting() {
+  var question;
+  var answer = ["yes", "no"];
+  do {
+    question = prompt("Have you heard of Bitmap (BMP) file? (yes/no)");
+  } while (!answer.includes(question.toLowerCase()));
+
+  document.getElementById("message").innerHTML = "Since you have answered " + question + ", let's learn more about how BMP images are compressed using Run-Length Encoding!";
+}
+</script>
+<head>
+    <title>Lossless- Bitmap (BMP) </title>    
+</head>
+<body onload = "greeting ();">
+    <div id="topinfo">
+        <h1>CS1102 - Course Project - 2023/2024 Semester B</h1>
+        <h4>Different image compression algorithms </h4>
+        <p> 
+          <table>
+            <tr>
+              <td>Chan Yue Ting (57276040)</td>
+              <td>Lau Foo Kiu (56616932)</td>
+              <td>Pan Ching Man (56623253)</td>
+              <td>Yau Kam Chau (57850287)</td>
+              <td>Yau Wing Yan (56611870)</td>
+            </tr>
+          </table>
+        </p>
+        <hr/>
+    </div>
+
+ <span class = "s1"><div id = "message"></div></span>
+<h1> Lossless Compression - Bitmap(BMP) Image  </h1>
+<hr size="2" width="40%" color="black">
+
+<br/>
+<h3> What is BMP file format?</h3>
+
+ <li>BMP format is an uncompressed raster file designed to display high-quality images on Microsoft Windows OS and store printable photos.</li>
+    <li>Image files are composed of either pixel or vector (geometric) data that are rasterized to pixels when displayed in a vector graphic display.</li>
+    <li>The pixels that constitute an image are ordered as a grid (columns and rows),each pixel consists of numbers
+representing magnitudes of brightness and color.</li>
+</br>
+<h3> Pros and Cons of BMP files</h3>
+
+<table>
+  <tr>
+    <th><b> Pros </b></th>
+    <th><b> Cons </b></th>
+  </tr>
+  <tr>
+    <td> Device-independent: Can be stored and display across multiple devices without quality degrading </td>
+    <td> Large file size: Difficult for image sharing, website usage or hardrive storing </td>
+  </tr>
+  <tr>
+    <td> Highly versatile: Can handle multiple color depths, profiles, and alpha channels </td>
+    <td> Color range limitation: BMP can only contain RGB images </td>
+  </tr>
+</table>
+
+
+<h3> BMP file compression algorithm : <u>Run-Length Encoding (RLE)</u> </h3>
+</br>
+</h2> <u>Definition</u></body>
+<li> Run-Length Encoding (RLE) is a data compression algorithm that is supported by most bitmap file formats including BMP. </li>
+
+<h3> Pros and Cons of BMP files</h3>
+
+<table>
+  <tr>
+    <th> Pros </th>
+    <th> Cons </th>
+  </tr>
+  <tr>
+    <td> Multiple data types: RLE is suited for compressing any type of data regardless of its information content.</td>
+    <td> Limitations on compression: RLE algorithms cannot achieve the high compression ratios of the more advanced compression methods</td>
+  </tr>
+  <tr>
+    <td> Easy and quick to use: RLE is easy to implement and quick to execute, for complex compression algorithms or uncompression image data, RLE is a good alternative</td>
+    <td> Result depends on the content of data: the content of the data will affect the compression ratio achieved by RLE </td>
+  </tr>
+</table>
+
+
+
+<h3> How does the Run-Length Algorithm work? </h3>
+</br>
+<p>RLE works by reducing the physical size of a repeating string of characters</p>
+<p>This repeating string, called a <u>run</u>, is typically encoded into two bytes. The first byte
+represents the number of characters in the run and is called the run count. The second byte is the value of the character in the run, which is in the range of 0 to 255, and is called the run value. </p>
+<h4>Run-Length Coding processing method: </h4>
+<IMG SRC="Run-Length Coding.gif" width="40%" >
+
+<h4> Example of compression of BMP files using Run-Length Encoding:  </h4>
+<IMG SRC="RLE Compression Example.jpg " width="40%" >
+
+<h4> More about Run-length encoding: </h4>
+
+<table>
+  <tr>
+    <th> Run-length encoding variants </th>
+    <th> Basic run-length encoding flow </th>
+    <th> 9-4: Bit-, byte-, and pixel-level RLE schemes </th>
+  </tr>
+  <tr>
+    <td> <IMG SRC="RLE Encoding Varients.png" width="100%" ></td>
+    <td> <IMG SRC="RLE Encoding flow.png" width="100%" ></td>
+    <td> <IMG SRC="RLE level scheme.png" width="100%" > </td>
+  </tr>
+</table>
+  <a href="#top">
+  <button>Back to top</button>
+</a>
+</body>
+</html>

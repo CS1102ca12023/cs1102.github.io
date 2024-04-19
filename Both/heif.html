@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HEIF Image Showcase</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        #heifContent {
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        #topinfo{
+      background: transparent;
+      width: 100%;
+      float: top;
+    }
+    table {border: 1px solid black;}
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: center;
+    }
+    </style>
+</head>
+<body>
+
+<div id="heifContent">
+    <!-- The JavaScript will inject content here -->
+</div>
+
+<script>
+    function addHEIFContent() {
+        const container = document.getElementById('heifContent');
+        
+        // Transcribe the text from the image and use here
+        const content = `
+        <div>
+    <h1>CS1102 - Course Project - 2023/2024 Semester B</h1>
+    <h4>Different image compression algorithams</h4>
+    <p> 
+      <table>
+        <tr>
+          <td>Chan Yue Ting (57276040)</td>
+          <td>Lau Foo Kiu (56616932)</td>
+          <td>Pan Ching Man (56623253)</td>
+          <td>Yau Kam Chau (57850287)</td>
+          <td>Yau Wing Yan (56611870)</td>
+        </tr>
+      </table>
+    </p>
+    <hr/>
+</div>            
+<h1>HEIF Image Showcase</h1>
+            <h2>Understanding the HEIF Algorithm</h2>
+            <p>The High Efficiency Image File Format (HEIF) represents a significant advancement in image compression technology, employing the High Efficiency Video Coding (HEVC) standard, also known as H.265. This modern codec efficiently compresses image data using techniques like inter-picture prediction and advanced entropy coding, allowing it to achieve higher compression ratios without compromising image quality. Inter-picture prediction leverages the similarities between sequential frames (or images) to reduce redundancy by encoding differences rather than the complete frame. Meanwhile, entropy coding optimizes the representation of information within the image, further reducing the file size without loss of essential data. The integration of these techniques enables HEIF to provide superior image quality at a fraction of the file size of conventional formats such as JPEG, making it an excellent choice for storage- and bandwidth-constrained applications.</p>
+        `;
+        
+        container.innerHTML = content;
+    }
+
+    // Invoke the function to add the content to the page
+    addHEIFContent();
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TIFF format</title>
+    <style>
+        :root {
+            /* Light theme colors */
+            --background-color: #86a7db; /* Light blue */
+            --text-color: #000; /* Black */
+            --border-color: #000; /* Black */
+        }
+        
+        .dark-mode {
+            /* Dark theme colors */
+            --background-color: #363537; /* Dark gray */
+            --text-color: #FAFAFA; /* Almost white */
+            --border-color: #919191; /* Light gray */
+        }
+        
+        body {
+
+            background-color: var(--background-color);
+            color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+      
+        #topinfo {
+        table, th, td {
+            border: 1px solid var(--border-color);
+            padding: 8px;
+            text-align: center;}
+          }
+        #ceninfo {
+            margin-right: 300px;
+            margin-left: 300px;
+
+            table, th, td {
+            width: 1200px;
+            height: 50px;
+            border: 1px solid var(--border-color);
+            padding: 8px;
+            text-align: center;  
+        }
+
+        #compress {
+            table, th, td {
+            width: 1200px;
+            height: 50px;
+            border: transparent;
+            text-align: center;  
+        }
+    </style>
+</head>
+<body>
+    <div id="topinfo">
+        <h1>CS1102 - Course Project - 2023/2024 Semester B</h1>
+        <h4>Different image compression algorithms</h4>
+        <table>
+            <tr>
+                <td>Chan Yue Ting (57276040)</td>
+                <td>Lau Foo Kiu (56616932)</td>
+                <td>Pan Ching Man (56623253)</td>
+                <td>Yau Kam Chau (57850287)</td>
+                <td>Yau Wing Yan (56611870)</td>
+            </tr>
+        </table>
+        <hr/>
+    </div>
+    <div id="ceninfo">
+        <h2>Lossy Compression -- TIFF Format</h2>
+        <p> Tag Image File Format(TIFF) is a image format for storing raster graphic, specially for interoperability and high-quality image preservation. Popular in graphic and photo editing.</br>It support Lossy and Lossless Compression in the same time. </p>
+        <table>
+          <tr>
+            <th> Advantage </th>
+            <th> Disadvantage </th>
+          </tr>
+          <tr>
+            <td> <b>Layer Support:</b>TIFF famously by it multiple layer support. User able to save and edit multiple layers in a signle file. </td>
+            <td> <b>Incompatibility Issues:</b>Lossy TIFF not universally supported by all devices, which may lead to accessibility problems. </td>
+          </tr>
+          <tr>
+            <td> <b>Ideal For Printing:</b>TIFF generate high quailty of image for printing. </td>
+            <td><b>Limit in Size:</b> The largest size of TIFF are limited at 4GB.</td>
+          </tr>
+          <tr> 
+            <td> <b>Flexible Compression Options:</b>TIFF format able to choose between Lossy and Lossless. Allow users to choose between for their own needs.</td>
+            <td> <b>Complexity of TIFF files:</b> Not all the applications able to read the tag from TIFF correctly, which will lead to incorrect display.</td>
+          </tr>
+        </table>
+        <h2> Compression Method -- Discrete Cosine Transform (DCT) </h2>
+        <div id="compress">
+            <h3><a href="jpeg.html#compress" target=”_blank”> Please Refer to JPEG Compression</a></h3>
+        <h2> Compression Method -- LZW Compression </h2>
+          <table>
+            <tr><th colspan="2"><img src="lzw.png"></th></tr>
+            <tr>
+              <td><b>Step 1: Initalize</b></br>Start with a dictionary containing all possible byte values. </td>
+              <td><b>Step 5: Output Code</b></br>Output the dictionary code to recognized sequence, and start a new sequence with the next symbol. </td>
+            </tr>
+             <tr>
+              <td><b>Step 2: Read Input</b></br>Begin to read the input data sequence to be compressed. </td>
+              <td><b>Step 6: Repeat</b></br>Repeat the process of checking and adding sequences until all the input data processed. </td>
+            </tr>
+            <td><b>Step 3: Check for Sequence in Dictionary</b></br>For each input sequence, check is it existed. </td>
+              <td><b>Step 7: Flush Remaining Data</b></br>Output the last sequence of the code. </td>
+            </tr>
+            <td><b>Step 4: Add New Sequence in the Dictionary</b></br>If the algorithms find the sequences is not in the dictionary, will add a new on and output the code for the longest existing sequence.</td>
+            </tr>
+          </table>
+        </div>
+      <button onclick="toggleDarkMode()">Toggle Dark/Light Mode</button>
+      <script>
+          function toggleDarkMode() {
+              document.body.classList.toggle('dark-mode');
+          }
+      </script>
+    </div>
+</body>
+</html>

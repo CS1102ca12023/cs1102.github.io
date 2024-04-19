@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TIFF Image Format Overview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        p, ul, li {
+            margin-bottom: 10px;
+        }
+        #tiffContent {
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        #topinfo{
+      background: transparent;
+      width: 100%;
+      float: top;
+    }
+    table {border: 1px solid black;}
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: center;
+    }
+    </style>
+</head>
+<body>
+
+<div id="tiffContent">
+    <!-- The JavaScript will inject content here -->
+</div>
+
+<script>
+    function addTIFFContent() {
+        const container = document.getElementById('tiffContent');
+        
+        // JavaScript code to insert the content
+        const content = `
+            <div id="topinfo">
+        <h1>CS1102 - Course Project - 2023/2024 Semester B</h1>
+        <h4>Different image compression algorithams</h4>
+        <p> 
+          <table>
+            <tr>
+              <td>Chan Yue Ting (57276040)</td>
+              <td>Lau Foo Kiu (56616932)</td>
+              <td>Pan Ching Man (56623253)</td>
+              <td>Yau Kam Chau (57850287)</td>
+              <td>Yau Wing Yan (56611870)</td>
+            </tr>
+          </table>
+        </p>
+        <hr/>
+    </div>
+<h1>An Overview of TIFF: The Tagged Image File Format</h1>
+            <p>The Tagged Image File Format (TIFF) is a versatile, adaptable file format for storing images. Developed in the mid-1980s by Aldus Corporation, now part of Adobe Systems, TIFF was designed to bridge the gap between desktop scanners and early desktop publishing systems. It is particularly favored for its ability to store high-resolution images in a lossless format, making it the format of choice for applications that demand the highest quality images, such as professional photography, publishing, and medical imaging.</p>
+            <h2>Understanding the TIFF Algorithm</h2>
+            <p>The Tagged Image File Format (TIFF) is notable for its flexibility, designed to support multiple image data formats with varying degrees of compression. TIFF's algorithm is fundamentally characterized by its use of tags within the file header, which dictate the structure and interpretation of the image data contained within. These tags can specify various properties of the image, such as its dimensions, color depth, and compression method used. Unlike simpler image formats, TIFF allows for complex image structures with layers and pages, supporting a wide range of applications from desktop publishing to medical imaging.</p>
+            <p>One of the core strengths of TIFF is its support for multiple compression schemes, allowing users to balance the need for quality against the requirement for file size reduction. Among these, LZW (Lempel-Ziv-Welch) compression is particularly noteworthy for its ability to reduce file sizes without loss of image quality, making it ideal for storing high-resolution images in a compressed form. Moreover, TIFF's ability to handle detailed image metadata through its tagging system makes it an excellent choice for archival purposes, where the preservation of detailed information about the file is crucial.</p>
+            <h2>Features of TIFF</h2>
+            <p>TIFF's most notable feature is its flexibility. It supports multiple color spaces, including RGB, CMYK, and grayscale, and can handle images with up to 32 bits per channel. This flexibility extends to its support for various compression schemes—both lossless, such as LZW and ZIP, and lossy, like JPEG—allowing users to balance image quality against file size according to their needs. Additionally, TIFF files can include an extensive range of metadata, including copyright information, image creation details, and camera settings.</p>
+            <h2>Benefits of Using TIFF</h2>
+            <p>One of the primary benefits of the TIFF format is its support for high-resolution, high-quality images without loss of detail, which is crucial for printing, scientific applications, and archival storage. Its ability to contain multiple images and layers within a single file also makes it highly suitable for scanned document storage and editing high-resolution photos with layers in photo editing software.</p>
+            <h2>Common Applications</h2>
+            <p>Due to its high quality and adaptability, TIFF is widely used in professional fields that require detailed image analysis and printing. It is the standard format for scanned documents in many corporate and legal environments, and it is also prevalent in desktop publishing, graphic design, and professional photography. In scientific and medical imaging, TIFF's support for high bit depths and precise color representation makes it indispensable for detailed image analysis.</p>
+            <h3>Conclusion</h3>
+            <p>TIFF remains a robust and flexible image format, capable of meeting the needs of a wide range of high-quality imaging applications. Its ability to maintain image integrity and support complex data structures ensures its continued relevance in fields where image quality cannot be compromised.</p>
+        `;
+        
+        container.innerHTML = content;
+    }
+
+    // Invoke the function to add the content to the page
+    addTIFFContent();
+</script>
+
+</body>
+</html>

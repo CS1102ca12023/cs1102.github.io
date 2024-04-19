@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gif</title>
+    <style>
+        .image-container {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        #topinfo{
+      background: transparent;
+      width: 100%;
+      float: top;
+    }
+h1 {text-align: center;}
+div {text-align: center;}
+    table {border: 1px solid black;}
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: center;
+    }
+    button {
+    background-color: black;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 10%;
+    }
+
+    </style>
+</head>
+<body>
+    <div id="topinfo">
+        <h1>CS1102 - Course Project - 2023/2024 Semester B</h1>
+        <h4>Different image compression algorithams</h4>
+        <p> 
+          <table>
+            <tr>
+              <td>Chan Yue Ting (57276040)</td>
+              <td>Lau Foo Kiu (56616932)</td>
+              <td>Pan Ching Man (56623253)</td>
+              <td>Yau Kam Chau (57850287)</td>
+              <td>Yau Wing Yan (56611870)</td>
+            </tr>
+          </table>
+        </p>
+        <hr/>
+    </div>
+    <h1>Gif</h1>
+    <p>Gif use LZW (Lempel-Ziv-Welch) compression algorithm. The compression contain one stages which is encoding.</p>
+    <p>The benefits of gif file format:</p>
+    <ul>
+        <li>Image with large area of one colour can result in greater compression</li>
+        <li>Image havaing vertical color changes can create less image size</li>
+    </ul>
+    <div class="image-container">
+        <img src="CS4.png" alt="Simple image" width="200" style="float:left;">
+        <img src="CS5.png" alt="Flower" width="200" style="float:left;">
+        <p>For example: The simple image on the left includes a large amount of one color, leading to a smaller image size. The complex image on the right consists of many colors, resulting in a larger image size.</p>
+    </div>
+    <p>The disadvantages of gif file format:</p>
+    <ul>
+        <li>Limited to a 256-color palette. Information of image will lost if image enclose more than 256 color</li>
+        <li>LZW is difficult to compress complex image, like full-color images</li>
+    </ul>
+    <h2>Encoding</h2>
+   <p>LZW compression make use of a code table form 1 to 255 codes.</p>
+    <p>Encoding process
+    </p>
+    <ol>
+        <li>Dictionary Initialization: The dictionary need to contain all poissable code</li>
+        <li>Read Input Data: It will read the input data from first character as the current sequence</li>
+        <li>Find the Longest Match: It look for the dictionary for the longest sequence that matches the current input. If there is a match exist, 
+            the current sequence is extended by puting next character, and continues seek for an even longer match</li>
+        <li>Output Codes: When there is an unmatched sequence, the algorithm outputs the code according to the longest matching sequence</li>
+        <li>Update the Dictionary: Add current sequence and next character into dictionary, then assigne it to next available code</li>
+        <li>Repeat: Rerun step 2 to step 5 until processed all input</li>
+    </ol> 
+    </body>
+</html>
+
+

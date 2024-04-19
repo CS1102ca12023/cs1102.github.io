@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Intro To Lossy Compression</title>
+    <style>
+        :root {
+            /* Light theme colors */
+            --background-color: #86a7db; /* Light blue */
+            --text-color: #000; /* Black */
+            --border-color: #000; /* Black */
+        }
+        
+        .dark-mode {
+            /* Dark theme colors */
+            --background-color: #363537; /* Dark gray */
+            --text-color: #FAFAFA; /* Almost white */
+            --border-color: #919191; /* Light gray */
+        }
+        
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        table, th, td {
+            border: 1px solid var(--border-color);
+            padding: 8px;
+            text-align: center;
+        }
+
+        #ceninfo {
+            margin-right: 150px;
+            margin-left: 230px;
+
+            table, th, td {
+            width: 1200px;
+            height: 50px;
+            border: 1px solid var(--border-color);
+            padding: 8px;
+            text-align: center;    
+        }
+    </style>
+</head>
+<body>
+    <div id="topinfo">
+        <h1>CS1102 - Course Project - 2023/2024 Semester B</h1>
+        <h4>Different image compression algorithms</h4>
+        <table>
+          <tr>
+              <td>Chan Yue Ting (57276040)</td>
+              <td>Lau Foo Kiu (56616932)</td>
+              <td>Pan Ching Man (56623253)</td>
+              <td>Yau Kam Chau (57850287)</td>
+              <td>Yau Wing Yan (56611870)</td>
+          </tr>
+        </table>
+        <hr/>
+    </div>
+
+    <div id="ceninfo">
+      <h2>Lossy Image Compression Comparison</h2>
+      <ul>
+          <li>Reduce file size significantly aims to enhance transmission</li>
+          <li>Irreversible compression which data cannot be fully restored</li>
+          <li>Reduce information that human visual hard to notice</li>
+          <li>We separate TIFF into Lossy Compression</li>
+      </ul>
+      <table>
+        <tr>
+            <th> </th>
+            <th><a href="jpeg.html"> JPEG</th>
+            <th><a href="webp.html">WEBP</th>
+            <th><a href="tiff.html">TIFF</th>
+            <th><a href="heif.html">HEIF</th>
+        </tr>
+        <tr>
+            <th>Compression Algorithm</th>
+            <td><a href="jpeg.html#compress">Discrete Cosine Transform (DCT)</a></td>
+            <td><a href="webp.html#compress">Arithmetic Entropy Encoding</a></td>
+            <td><a href="tiff.html#compress">Discrete Cosine Transform(Lossy)/</br>LZW Compression(Lossless)</td>
+            <td><a href="heif.html#compress">High Efficiency Video Coding (HEVC)</td>
+        </tr>
+         <tr>
+            <th>Color Range</th>
+            <td>8-bit (16.7 million colors)</td>
+            <td>24-bit and support for 8-bit transparency</td>
+            <td>Up to 48-bit (65 billion colors)</td>
+            <td>Up to 16-bit (65,536 shades per color)</td>
+        </tr>
+         <tr>
+            <th>File Size After Compression</th>
+            <td>Small</td>
+            <td>Small</td>
+            <td>Large</td>
+            <td>Medium</td>
+        </tr>
+        <th>Image Quality After Compression</th>
+            <td>Normal</td>
+            <td>Very High</td>
+            <td>High</td>
+            <td>Good,More efficient than JPEG</td>
+        </tr>
+      </table>
+    </div>
+    <button onclick="toggleDarkMode()">Toggle Dark/Light Mode</button>
+    <script>
+      function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark-mode');
+      }
+    </script>
+</body>
+</html>

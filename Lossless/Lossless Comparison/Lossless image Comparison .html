@@ -14,6 +14,15 @@ h1 {text-align: center;}
       padding: 8px;
       text-align: center;
     }
+     button {
+    background-color: black;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 10%;
+}
 
 </style>
 <head>
@@ -22,7 +31,7 @@ h1 {text-align: center;}
 </head>
 
 <body>
-  <div id="topinfo">
+	<div id="topinfo">
         <h1>CS1102 - Course Project - 2023/2024 Semester B</h1>
         <h4>Different image compression algorithams</h4>
         <p> 
@@ -37,10 +46,10 @@ h1 {text-align: center;}
           </table>
         </p>
         <hr/>
-    </div>
+    </div>
 
-  </br>
-  <script>
+	</br>
+	<script>
 var color = new Array("black", "brown");
 var no = 0;
 function load(obj){
@@ -64,12 +73,12 @@ Lossless image compression comparison </span>
 </br>
 <h3>Lossless compression Algorithm  </h3>
 
-<li> Lossless compression is a technique to compress image without data losing. </li>
+<li> Lossless compression is a technique to compress an image without data loss.</li>
 <li> It enables images to take up less space and there is a discernible loss in picture quality </li>
-<li> It is known as reversible compression which data files is restored and rebuilt in its orginal form after decompression</li>
-  
-  </br>
-  <table>
+<li> It is known as reversible compression which data files are restored and rebuilt in their original form after decompression. </li>
+	
+	</br>
+	<table>
   <tr>
     <th> </th>
     <th> PNG </th>
@@ -78,11 +87,11 @@ Lossless image compression comparison </span>
     <th> Lossless RAW </th>
   </tr>
   <tr>
-    <td><b> Compression Algorithm</b></td>
-    <td>DEFLATE</td>
-    <td>Encoding</td>
-    <td>Run-Length Encoding </td>
-    <td> Processed by Post-processing software </td>
+  	<td><b> Compression Algorithm</b></td>
+  	<td>DEFLATE</td>
+  	<td>Encoding</td>
+  	<td>Run-Length Encoding </td>
+  	<td> Processed by Post-processing software </td>
   <tr>
     <td> <b> Color range</b> </td>
     <td> Full 24-bit color (8 bits per channel) and an alpha channel ( level of transparency between 0 (fully transparent) and 255 (fully opaque).) </td>
@@ -91,16 +100,16 @@ Lossless image compression comparison </span>
     <td> No fixed color range </td>
    </tr>
    <td> <b> File size after file compression </b></td>
-    <td> Large </td>
-    <td> Small </td>
-    <td> Large </td>
-    <td> Large </td>
+   	<td> Large </td>
+   	<td> Small </td>
+   	<td> Large </td>
+   	<td> Large </td>
    </tr>
    <td> <b> Image quality after file compression </b></td>
-    <td> High </td>
-    <td> Low </td>
-    <td> High </td>
-    <td> High </td>
+   	<td> High </td>
+   	<td> Low </td>
+   	<td> High </td>
+   	<td> High </td>
    </tr>
 </table>
 </br> 
@@ -109,6 +118,8 @@ Lossless image compression comparison </span>
 <IMG SRC="Lossless gif.gif" width="40%"  >
 </div>
 
-
+ <a href="#top">
+  <button>Back to top</button>
+</a>
 </body>
 </html>
