@@ -1,113 +1,157 @@
 <!DOCTYPE html>
 
-<html>
-<style>
-	 #topinfo{
-      background: transparent;
-      width: 100%;
-      float: top;
-    }
-    table {border: 1px solid black;}
-    th, td {
-      border: 1px solid black;
-      padding: 8px;
-      text-align: center;
-    }
+  <html>
+  <style>
+  	 #topinfo{
+        background: transparent;
+        width: 100%;
+        float: top;
+      }
+      table {border: 1px solid black;}
+      th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: center;
+      }
+  button {
+      background-color: black;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 10%;
+      float: right;
+      margin-right: 10px;
+  }
+  :root {
+              --background-color: #86a7db;
+              --text-color: #000;
+              --border-color: #000;
+          }
+          
+          .dark-mode {
+              --background-color: #363537; 
+              --text-color: #FAFAFA;
+              --border-color: #919191; 
+          }
+          
+          body {
 
-h1 {text-align: center;}
-div {text-align: center;}
+              background-color: var(--background-color);
+              color: var(--text-color);
+              transition: background-color 0.3s ease, color 0.3s ease;
+          }
+        
+          #topinfo {
+          table, th, td {
+              border: 1px solid var(--border-color);
+              padding: 8px;
+              text-align: center;}
+            }
+          #ceninfo {
+              margin-right: 300px;
+              margin-left: 300px;
 
-button {
-    background-color: black;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 10%;
-}
+              table, th, td {
+              width: 1200px;
+              height: 50px;
+              border: 1px solid var(--border-color);
+              padding: 8px;
+              text-align: center;  
+          }
+  </style>
+  <script>
+            function toggleDarkMode() {
+                document.body.classList.toggle('dark-mode');
+            }
+  </script>
+  <head>
+      <title>Lossless- RAW </title>    
+  </head>
 
-</style>
+  <body>
+   <button onclick="toggleDarkMode()">Toggle Dark/Light Mode </button>
+     <a href="https://cs1102ca12023.github.io/cs1102.github.io/">
+    <button>back to homepage</button>
+  </a>
+    <br/>
+  	<div id="topinfo">
+          <h1>CS1102 - Course Project - 2023/2024 Semester B</h1>
+          <h4>Different image compression algorithms</h4>
+          <p> 
+            <table>
+              <tr>
+                <td>Chan Yue Ting (57276040)</td>
+                <td>Lau Foo Kiu (56616932)</td>
+                <td>Pan Ching Man (56623253)</td>
+                <td>Yau Kam Chau (57850287)</td>
+                <td>Yau Wing Yan (56611870)</td>
+              </tr>
+            </table>
+          </p>
+          <hr/>
+      </div>
 
-<head>
-    <title>Lossless- RAW </title>    
-</head>
+  <center>
+    <h1>Lossless Compression - RAW Image</h1>
+    <hr size="2" width="40%" color="black">
+  </center>
 
-<body>
-	<div id="topinfo">
-        <h1>CS1102 - Course Project - 2023/2024 Semester B</h1>
-        <h4>Different image compression algorithms</h4>
-        <p> 
-          <table>
-            <tr>
-              <td>Chan Yue Ting (57276040)</td>
-              <td>Lau Foo Kiu (56616932)</td>
-              <td>Pan Ching Man (56623253)</td>
-              <td>Yau Kam Chau (57850287)</td>
-              <td>Yau Wing Yan (56611870)</td>
-            </tr>
-          </table>
-        </p>
-        <hr/>
-    </div>
+  <br/>
+  <h3> What is RAW file format? </h3>
 
-<h1> Lossless Compression - RAW Image  </h1>
-<hr size="2" width="40%" color="black">
+   <li>RAW files contain uncompressed and unprocessed image data captured by digital camera or scanner's sensors. </li>
+   <li>Among the raster file types, RAW file stores the largest amount of detail which facilitates editing, compressing, and converting RAW files into other formats. </li>
 
-<br/>
-<h3> What is RAW file format? </h3>
+  </br>
+  <h3> Pros and Cons of RAW files</h3>
 
- <li>RAW files contain uncompressed and unprocessed image data captured by digital camera or scanner's sensors. </li>
- <li>Among the raster file types, RAW file stores the largest amount of detail which facilitates editing, compressing, and converting RAW files into other formats. </li>
+  <table>
+    <tr>
+      <th> Pros </th>
+      <th> Cons </th>
+    </tr>
+    <tr>
+      <td> Images with great details and wide color range: RAW images contain most detail and multiple colors.</td>
+      <td> Format Compatibility: Unstandradised raw files create situations where software can't read files from certain cameras. </td>
+     </tr>
+      <td> Greater control on image adjustment and conversion: Allows multiple adjustments including image brightness, contrast, and gamma correction. It also allows the merging of RAW files to form HDR or panoramic images.</td>
+      <td> Large file size: The size of RAW images can require both additional camera and computer storage space </td>
+    </tr>
+    <tr>
+      <td> Possibility of Image conversion: RAW images can possibly merge to form HDR or panoramic images for editing. </td>
+      <td> Long workflow: Large file size causing longer time to process RAW files. </td>
+  Due to the larger file sizes, conversions and having at least two files for each image (the original RAW and converted raster file), it can take longer to work with RAW files.</td>
+    </tr>
+  </table>
 
-</br>
-<h3> Pros and Cons of RAW files</h3>
-
-<table>
-  <tr>
-    <th> Pros </th>
-    <th> Cons </th>
-  </tr>
-  <tr>
-    <td> Images with great details and wide color range: RAW images contain most detail and multiple colors.</td>
-    <td> Format Compatibility: Unstandradised raw files create situations where software can't read files from certain cameras. </td>
-   </tr>
-    <td> Greater control on image adjustment and conversion: Allows multiple adjustments including image brightness, contrast, and gamma correction. It also allows the merging of RAW files to form HDR or panoramic images.</td>
-    <td> Large file size: The size of RAW images can require both additional camera and computer storage space </td>
-  </tr>
-  <tr>
-    <td> Possibility of Image conversion: RAW images can possibly merge to form HDR or panoramic images for editing. </td>
-    <td> Long workflow: Large file size causing longer time to process RAW files. </td>
-Due to the larger file sizes, conversions and having at least two files for each image (the original RAW and converted raster file), it can take longer to work with RAW files.</td>
-  </tr>
-</table>
-
-</br>
-<h3> Pros and Cons of RAW files</h3>
+  </br>
+  <h3> Pros and Cons of RAW files</h3>
 
 
-<h3> Learn more about <u> Uncompressed RAW image </u> and <u> Lossless RAW Compression </u> </h3>
+  <h3> Learn more about <u> Uncompressed RAW image </u> and <u> Lossless RAW Compression </u> </h3>
 
-<h4>Uncompressed RAW image</h4>
-<li> Data are all preserved without compression.</li>
-<li> There is no impact on image quality, which provides flexibility in manipulating various aspects of the image with minimized quality loss. Aspects manipulation including brightness, color, sharpness, and noise reduction. </li>
+  <h4>Uncompressed RAW image</h4>
+  <li> Data are all preserved without compression.</li>
+  <li> There is no impact on image quality, which provides flexibility in manipulating various aspects of the image with minimized quality loss. Aspects manipulation including brightness, color, sharpness, and noise reduction. </li>
 
-<h4> Lossless RAW Compression</h4>
-<li> Allows image size reduction without compromising on image quality</li>
-<li> Process by post-processing software and decompressed similarly with ZIP file.</li>
-<li> After file decompression, images are expanded back to their original size.</li>
-<li> Ideal choice for RAW image compression since data are fully preserved with fewer storage spaces.</li>
+  <h4> Lossless RAW Compression</h4>
+  <li> Allows image size reduction without compromising on image quality</li>
+  <li> Process by post-processing software and decompressed similarly with ZIP file.</li>
+  <li> After file decompression, images are expanded back to their original size.</li>
+  <li> Ideal choice for RAW image compression since data are fully preserved with fewer storage spaces.</li>
 
-<h3> How big are the differences between an uncompressed RAW image and a Lossless RAW image? </h3>
-<IMG SRC="RAW image compression.jpg" width="40%" >
+  <h3> How big are the differences between an uncompressed RAW image and a Lossless RAW image? </h3>
+  <IMG SRC="RAW image compression.jpg" width="40%" >
 
-<h3> Examples of Post-processing software </h3>
-<li> Adobe Photoshop</li>
-<li> Adobe Lightroom</li>
+  <h3> Examples of Post-processing software </h3>
+  <li> Adobe Photoshop</li>
+  <li> Adobe Lightroom</li>
 
- <a href="#top">
-  <button>Back to top</button>
-</a>
-</body>
+   <a href="#top">
+    <button>Back to top</button>
+  </a>
+  </body>
 
-</html>
+  </html>
