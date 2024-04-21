@@ -1,6 +1,3 @@
-<?php
-        $title = "index.php";
-?>
 <html>
 <head>
 <title>Mini Quiz</title>
@@ -14,6 +11,7 @@
 </head>
 <body>
 <?php
+                $title = "index.php";
   echo '<div class="center">';
   echo '    <h1>CS1102 - Course Project</h1>';
   echo '    Lets review your learning process about different image compression algorithams. <br>
