@@ -103,12 +103,41 @@
             <td> <img src="CABAC.png"></td>
         </table>
       <button onclick="toggleDarkMode()">Toggle Dark/Light Mode</button>
-        
+       <a href="https://cs1102ca12023.github.io/cs1102.github.io/" class="back-to-home button">Back to Homepage</a>
+
+    <!-- 'Back to Top' button -->
+    <button onclick="scrollToTop()" class="back-to-top button">Back to Top</button>  
       <script>
           function toggleDarkMode() {
               document.body.classList.toggle('dark-mode');
           }
+           function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementsByClassName("back-to-top")[0].style.display = "block";
+            } else {
+                document.getElementsByClassName("back-to-top")[0].style.display = "none";
+            }
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        // Show 'Back to Top' and 'Back to Homepage' buttons
+        document.getElementsByClassName("back-to-top")[0].style.display = "block";
+        document.getElementsByClassName("back-to-home")[0].style.display = "block";
       </script>
     </div>
 </body>
 </html>
+
