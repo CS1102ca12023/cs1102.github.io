@@ -194,6 +194,52 @@ li:hover ul#submenu{
   background-color :#000;
   z-index: 1;
 }
+   :root {
+            --background-color: #86a7db;
+            --text-color: #000;
+            --border-color: #000;
+        }
+        
+        .dark-mode {
+            --background-color: #363537; 
+            --text-color: #FAFAFA;
+            --border-color: #919191; 
+        }
+        
+        body {
+
+            background-color: var(--background-color);
+            color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+      
+        #topinfo table, #topinfo th, #topinfo td {
+    border: 1px solid var(--border-color);
+    padding: 8px;
+    text-align: center;
+}
+        #ceninfo {
+            margin-right: 300px;
+            margin-left: 300px;
+
+            table, th, td {
+            width: 1200px;
+            height: 50px;
+            border: 1px solid var(--border-color);
+            padding: 8px;
+            text-align: center;  
+        }
+        button {
+    background-color: black;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 10%;
+    float: right;
+    margin-right: 10px;
+}
   </style>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script>
@@ -209,9 +255,13 @@ $(function () {
     });
 });
 </script>
+<script>function toggleDarkMode() {
+              document.body.classList.toggle('dark-mode');
+          }</script>
 </head>
 <body>
 <div id="topinfo">
+ <div id="buttonn"><button onclick="toggleDarkMode()">Toggle Dark/Light Mode</button></div>
   <h1>CS1102 - Course Project - 2023/2024 Semester B</h1>
   <h4>Different image compression algorithms</h4>
   <p> 
