@@ -47,6 +47,17 @@
             border: transparent;
             text-align: center;  
         }
+            button {
+    background-color: black;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 10%;
+    float: right;
+    margin-right: 10px;
+}
     </style>
 </head>
 <body>
@@ -121,7 +132,9 @@
           </tr>
         </table>
     </div>
-      <button onclick="toggleDarkMode()">Toggle Dark/Light Mode</button>
+     <a href="#top">
+  <button>Back to top</button>
+</a>
       <script>
           function toggleDarkMode() {
               document.body.classList.toggle('dark-mode');
