@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+<head>
+  <title>CS1102</title>
+  <style>
+    pre {
+    font-family: monospace;
+  }
+  table {border: 1px solid black;}
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;}
+    #topinfo{
+  background: transparent;
+  width: 100%;
+  float: top;
+}
+button {
+    background-color: black;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 10%;
+    float: right;
+    margin-right: 10px;
+}
+:root {
+            --background-color: #86a7db;
+            --text-color: #000;
+            --border-color: #000;
+        }
+        
+        .dark-mode {
+            --background-color: #363537; 
+            --text-color: #FAFAFA;
+            --border-color: #919191; 
+        }
+        
+        body {
+
+            background-color: var(--background-color);
+            color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+      
+        #topinfo {
+        table, th, td {
+            border: 1px solid var(--border-color);
+            padding: 8px;
+            text-align: center;}
+          }
+        #ceninfo {
+            margin-right: 300px;
+            margin-left: 300px;
+
+            table, th, td {
+            width: 1200px;
+            height: 50px;
+            border: 1px solid var(--border-color);
+            padding: 8px;
+            text-align: center;  
+        }
+    </style>
+      <script>
+          function toggleDarkMode() {
+              document.body.classList.toggle('dark-mode');
+          }
+      </script>
+</head>
+<body>
+  <div id="topinfo">
+    <a href="https://cs1102ca12023.github.io/cs1102.github.io/">
+      <button>back to homepage</button>
+    </a>
+    <button onclick="toggleDarkMode()">Toggle Dark/Light Mode</button>
+    <h1>CS1102 - Course Project - 2023/2024 Semester B</h1>
+    
+    
+    <h4>Different image compression algorithms</h4>
+    <p> 
+      <table>
+        <tr>
+          <td>Chan Yue Ting (57276040)</td>
+          <td>Lau Foo Kiu (56616932)</td>
+          <td>Pan Ching Man (56623253)</td>
+          <td>Yau Kam Chau (57850287)</td>
+          <td>Yau Wing Yan (56611870)</td>
+        </tr>
+      </table>
+    </p>
+    <hr/>
+
+    <ul>
+        <li> Wallace, G. K. (1992). The JPEG still picture compression standard. Communications of the ACM, 34(4), 30-44. https://doi.org/10.1145/103085.103089
+        <br/>This seminal paper by Wallace provides a comprehensive overview of the JPEG standard, detailing the algorithm's components such as DCT, quantization, and entropy coding.
+            </li><br>
+       <li> Pennebaker, W. B., & Mitchell, J. L. (1993). JPEG: Still image data compression standard. Van Nostrand Reinhold.
+        <br/>Pennebaker and Mitchell's book offers an in-depth examination of the JPEG standard, including its mathematical foundations and practical applications. It serves as a cornerstone reference for understanding the technical intricacies of JPEG compression.
+        </li> <br>
+        <li>Sayood, K. (2017). Introduction to data compression (5th ed.). Morgan Kaufmann.
+           <br/> Sayood’s textbook provides a broad overview of data compression techniques, including a detailed section on JPEG compression. It explains the rationale behind the algorithm's steps, such as color space transformation and downsampling, in a manner accessible to both students and professionals.
+            </li><br>
+            <li>Gonzalez, R. C., & Woods, R. E. (2018). Digital image processing (4th ed.). Pearson.
+               <br/> Gonzalez and Woods’ comprehensive text on digital image processing covers a wide range of topics, including image compression. The discussion on JPEG compression within the book highlights its practical implications and the theoretical basis for its efficiency.     
+                </li><br>
+                <li>CrashCourse. (2017). Compression: Crash Course Computer Science #21. Youtube. https://www.youtube.com/watch?v=OtDxDvCpPL4&ab_channel=CrashCourse</li> <br>
+<li>Jake Wright. (2013). Learn PHP in 15 minutes. Youtube. https://www.youtube.com/watch?v=ZdP0KM49IVk&t=724s&ab_channel=JakeWright</li> <br>
+
+<li>Medium. (2016). How PNG Works. https://medium.com/@duhroach/how-png-works-f1174e3cc7b7</li> <br>
+
+<li>Web Developers Notes. Gif compression algorithm. https://www.webdevelopersnotes.com/gif-compression-algorithm</li> <br>
+
+<li>Wallace, G. K. (1992). The JPEG still picture compression standard. Communications of the ACM, 34(4), 30-44. https://doi.org/10.1145/103085.103089
+<br/>This seminal paper by Wallace provides a comprehensive overview of the JPEG standard, detailing the algorithm's components such as DCT, quantization, and entropy coding.</li> <br>
+
+<li>Pennebaker, W. B., & Mitchell, J. L. (1993). JPEG: Still image data compression standard. Van Nostrand Reinhold.
+<br/>Pennebaker and Mitchell's book offers an in-depth examination of the JPEG standard, including its mathematical foundations and practical applications. It serves as a cornerstone reference for understanding the technical intricacies of JPEG compression.</li> <br>
+
+<li>Sayood, K. (2017). Introduction to data compression (5th ed.). Morgan Kaufmann.
+<br/>Sayood’s textbook provides a broad overview of data compression techniques, including a detailed section on JPEG compression. It explains the rationale behind the algorithm's steps, such as color space transformation and downsampling, in a manner accessible to both students and professionals.</li> <br>
+
+<li>Scarmana, G. (2014). Lossless data compression of grid-based digital elevation models: A png image format evaluation. ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences, II–5(5), 313–319. https://doi.org/10.5194/isprsannals-II-5-313-2014</li> <br>
+
+<li>Stackoverflow. (2018). flexbox vertical center with 100% height. https://stackoverflow.com/questions/46931290/flexbox-vertical-center-with-100-height</li> <br>
+
+<li>Stackoverflow. (2014). How to center an element horizontally and vertically. https://stackoverflow.com/questions/19461521/how-to-center-an-element-horizontally-and-vertically</li> <br>
+
+<li>Gonzalez, R. C., & Woods, R. E. (2018). Digital image processing (4th ed.). Pearson.
+<br/>Gonzalez and Woods’ comprehensive text on digital image processing covers a wide range of topics, including image compression. The discussion on JPEG compression within the book highlights its practical implications and the theoretical basis for its efficiency.</li> <br>
+
+
+<li>Run-Length-Encoding (2021). El-Shorouk Academy, Higher Institute for Computer & Information Technology Web site: https://taahmedsror.files.wordpress.com/2012/03/run-length-encoding.pdf</li> <br>
+
+
+<li>bmp file :https://www.adobe.com/creativecloud/file-types/image/raster/bmp-file.html</li> <br>
+
+<li>run-length algorithm: https://taahmedsror.files.wordpress.com/2012/03/run-length-encoding.pdf </li> <br>
+
+<li>BMP compression example: <br>
+  https://www.khanacademy.org/computing/computers-and-internet/xcae6f4a7ff015e7d:digital-information/xcae6f4a7ff015e7d:data-compression/a/simple-image-compression <br/>https://www.sony.com/electronics/support/articles/00257081</li> <br>
+
+<li>A. (n.d.). Organizational Chart Library. ApexCharts. Retrieved April 19, 2024, from https://apexcharts.com/apextree/
+
+</li><br>
+<li>
+  [Online web Ustaad]. (2022, September 11). Easiest Dropdown Hover Menu with HTML CSS Only [Video]. Youtube. https://youtu.be/Ey-slKj8xA8?si=YbA462y2FtL-4hTt
+</li>
+    </ul>
+    <a href="#top">
+      <button>Back to top</button>
+    </a>
+</body>
