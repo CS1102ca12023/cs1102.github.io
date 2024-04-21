@@ -3,6 +3,17 @@
 <head>
     <title>JPEG format</title>
     <style>
+        button {
+    background-color: black;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 10%;
+    float: right;
+    margin-right: 10px;
+}
         :root {
             /* Light theme colors */
             --background-color: #86a7db; /* Light blue */
@@ -49,23 +60,13 @@
             border: transparent;
             text-align: center;  
         }
-         #button {
-    background-color: black;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 10%;
-    float: right;
-    margin-right: 10px;
-}
+         
     </style>
 </head>
 <body>
     <button onclick="toggleDarkMode()">Toggle Dark/Light Mode</button>
     <a href="https://cs1102ca12023.github.io/cs1102.github.io/"></a>
-  <button>back to homepage</button>
+  <button>back to homepage </button>
     <div id="topinfo">
         <h1>CS1102 - Course Project - 2023/2024 Semester B</h1>
         <h4>Different image compression algorithms</h4>
@@ -152,9 +153,6 @@
   <button>Back to top</button>
 </a>
       <script>
-          function toggleDarkMode() {
-              document.body.classList.toggle('dark-mode');
-          }
       </script>
     </div>
 </body>
