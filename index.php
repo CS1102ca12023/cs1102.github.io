@@ -1,3 +1,6 @@
+<?php
+        $title = "index.php";
+?>
 <html>
 <head>
 <title>Mini Quiz</title>
