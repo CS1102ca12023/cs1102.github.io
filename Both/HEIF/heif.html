@@ -64,6 +64,27 @@
         </table>
         <hr/>
     </div>
+    <button onclick="scrollToTop()" id="back-to-top" title="Go to top">↑ Back to Top</button>
+
+    <script>
+        window.onscroll = function() {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("back-to-top").style.display = "block";
+            } else {
+                document.getElementById("back-to-top").style.display = "none";
+            }
+        }
+
+        
+        function scrollToTop() {
+            document.body.scrollTop = 0; 
+            document.documentElement.scrollTop = 0; 
+        }
+    </script>
     <div id="ceninfo">
         <h2>Lossy Compression -- HEIF Format</h2>
         <p> High Efficiency Image Format (HEIF) is a new image file format recently, they aims to repalce and be an alternative of JPEG where HEIF having better compression method and enhanced image quality. </p>
