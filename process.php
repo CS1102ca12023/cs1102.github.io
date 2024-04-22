@@ -9,6 +9,7 @@
             flex-direction: column;
             height: 100vh;
             text-align: center;
+            background-color: #86a7db
         }
     </style>
 </head>
@@ -25,7 +26,7 @@
         <br>and distinguish understand different image compression algorithams.";
     }
     echo '<br>';
-    echo '<a href="https://www.cs.cityu.edu.hk/">Back to Home page</a>';
+    echo '<a href="https://cs1102ca12023.github.io/cs1102.github.io/">Back to Home page</a>';
 ?>
 </body>
 </html>
